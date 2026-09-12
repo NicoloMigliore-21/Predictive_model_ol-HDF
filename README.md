@@ -58,7 +58,7 @@ Di seguito sono riportati i principali risultati ottenuti:
 </p>
 
 <p align="center">
-  <img src="results/RR%.png" alt="Distribuzione dell'errore assoluto per Reduction Ratio% a T0 e T6" width="700">
+  <img src="results/RR.png" alt="Distribuzione dell'errore assoluto per Reduction Ratio% a T0 e T6" width="700">
   <br>
   <em>Figura 4: Distribuzione Errore assoluto a T0 e T6 per RR%.</em>
 </p>
