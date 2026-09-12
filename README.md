@@ -27,6 +27,7 @@ Il cuore tecnico di questo progetto è lo sviluppo di un modello cinetico avanza
   <br>
   <em>Figura 1: Schema del modello per la distribuzione e la rimozione delle tossine uremiche legate alle proteine ​​(PBUTs). In questo schema, T, PT e V indicano, rispettivamente, la concentrazione di tossina libera, la concentrazione di tossina legata alle proteine ​​e il volume di distribuzione nel compartimento indicato dal pedice.</em>
 </p>
+
 Il modello è stato parametrizzato utilizzando dati clinici reali provenienti da **20 pazienti** sottoposti a terapie OL-HDF. Per affrontare la "stiffness" (rigidezza) intrinseca del modello e consentire previsioni rapide dei risultati, sono stati valutati diversi schemi espliciti di integrazione numerica:
 - Forward Euler method
 - Runge Kutta methods (2nd order and 4th order)
@@ -39,6 +40,7 @@ Il modello personalizzato ha riprodotto accuratamente la cinetica delle PBUTs, m
   <br>
   <em>Figura 2: Confronto tra i dati clinici reali (punti) e la simulazione del modello (linee) per un paziente specifico.</em>
 </p>
+
 Tra gli schemi di integrazione testati, il metodo **Runge-Kutta del secondo ordine** ha garantito la stabilità assoluta, riducendo i tempi di simulazione fino al **32%**.
 
 ### Valutazione Statistica dell'Accuratezza
@@ -69,4 +71,5 @@ Infine, per tradurre queste capacità computazionali in uno strumento clinico pr
   <br>
   <em>Figura 5: Interfaccia grafica (GUI) sviluppata in Python per l'utilizzo clinico.</em>
 </p>
+
 In futuro, questo framework può rappresentare un potente strumento predittivo a supporto del lavoro del medico, aiutando il paziente a ricevere il miglior trattamento possibile, realmente "cucito sulla sua persona" nell'ottica di una medicina di precisione.
