@@ -28,8 +28,20 @@ Il modello è stato parametrizzato utilizzando dati clinici reali provenienti da
 
 ### Risultati Principali e Impatto Clinico
 
-Il modello personalizzato ha riprodotto accuratamente la cinetica delle PBUTs, mostrando un ottimo accordo con i dati clinici e bassi errori assoluti (<16 mg/L per le tossine totali e <0.8 mg/L per le frazioni libere). Tra gli schemi di integrazione testati, il metodo **Runge-Kutta del secondo ordine** ha garantito la stabilità assoluta, riducendo i tempi di simulazione fino al **32%**.
+Il modello personalizzato ha riprodotto accuratamente la cinetica delle PBUTs, mostrando un ottimo accordo con i dati clinici e bassi errori assoluti (<16 mg/L per le tossine totali e <0.8 mg/L per le frazioni libere).
+<p align="center">
+  <img src="results/concentr20paz.png" alt="Confronto Dati Clinici vs Modello matematico" width="700">
+  <br>
+  <em>Figura 1: Confronto tra i dati clinici reali (punti) e la simulazione del modello (linee) per un paziente specifico.</em>
+</p>
+Tra gli schemi di integrazione testati, il metodo **Runge-Kutta del secondo ordine** ha garantito la stabilità assoluta, riducendo i tempi di simulazione fino al **32%**.
 
 #### Verso una Medicina di Precisione
 
-Infine, per tradurre queste capacità computazionali in uno strumento clinico pratico, è stata implementata una **GUI user-friendly** che permette ai medici di utilizzare l'interfaccia con facilità. In futuro, questo framework può rappresentare un potente strumento predittivo a supporto del lavoro del medico, aiutando il paziente a ricevere il miglior trattamento possibile, realmente "cucito sulla sua persona" nell'ottica di una medicina di precisione.
+Infine, per tradurre queste capacità computazionali in uno strumento clinico pratico, è stata implementata una **GUI user-friendly** che permette ai medici di utilizzare l'interfaccia con facilità. 
+<p align="center">
+  <img src="results/GUI_PBUTs.png" alt="Interfaccia Grafica (GUI)" width="800">
+  <br>
+  <em>Figura 3: Interfaccia grafica (GUI) sviluppata in Python per l'utilizzo clinico.</em>
+</p>
+In futuro, questo framework può rappresentare un potente strumento predittivo a supporto del lavoro del medico, aiutando il paziente a ricevere il miglior trattamento possibile, realmente "cucito sulla sua persona" nell'ottica di una medicina di precisione.
