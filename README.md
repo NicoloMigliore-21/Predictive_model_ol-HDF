@@ -22,6 +22,11 @@ Questo progetto mira a superare questo limite sviluppando un **modello matematic
 ### Il Modello Matematico e la Sua Implementazione
 
 Il cuore tecnico di questo progetto è lo sviluppo di un modello cinetico avanzato. Questo modellizza due sistemi interconnessi tra loro: il **paziente**, rappresentato tramite un modello cinetico a **3 compartimenti** (intracellulare, interstiziale e plasmatico), e il **dializzatore**, modellato matematicamente in **1D**.
+<p align="center">
+  <img src="results/schema.png" alt="Schema Paziente-Dializzatore" width="700">
+  <br>
+  <em>Figura 1: Schema del modello per la distribuzione e la rimozione delle tossine uremiche legate alle proteine ​​(PBUTs). In questo schema, T, PT e V indicano, rispettivamente, la concentrazione di tossina libera, la concentrazione di tossina legata alle proteine ​​e il volume di distribuzione nel compartimento indicato dal pedice.</em>
+</p>
 Il modello è stato parametrizzato utilizzando dati clinici reali provenienti da **20 pazienti** sottoposti a terapie OL-HDF. Per affrontare la "stiffness" (rigidezza) intrinseca del modello e consentire previsioni rapide dei risultati, sono stati valutati diversi schemi espliciti di integrazione numerica:
 - Forward Euler method
 - Runge Kutta methods (2nd order and 4th order)
@@ -32,9 +37,29 @@ Il modello personalizzato ha riprodotto accuratamente la cinetica delle PBUTs, m
 <p align="center">
   <img src="results/concentr20paz.png" alt="Confronto Dati Clinici vs Modello matematico" width="700">
   <br>
-  <em>Figura 1: Confronto tra i dati clinici reali (punti) e la simulazione del modello (linee) per un paziente specifico.</em>
+  <em>Figura 2: Confronto tra i dati clinici reali (punti) e la simulazione del modello (linee) per un paziente specifico.</em>
 </p>
 Tra gli schemi di integrazione testati, il metodo **Runge-Kutta del secondo ordine** ha garantito la stabilità assoluta, riducendo i tempi di simulazione fino al **32%**.
+
+### Valutazione Statistica dell'Accuratezza
+
+Per valutare l'accuratezza predittiva del modello sono state condotte analisi statistiche approfondite sugli errori rispetto ai dati clinici. Nello specifico, sono state calcolate due metriche primarie:
+
+1. **Errore assoluto sulle concentrazioni:** Valutato confrontando direttamente le traiettorie predette dal modello con i valori clinici registrati nei diversi punti temporali (ad 1h, 2h, 3h, 4h di trattamento dialitico).
+2. **Errore assoluto sul Reduction Ratio percentuale (RR%):** Valutato per quantificare la precisione del modello nella stima dell'efficienza depurativa complessiva del trattamento.
+
+Di seguito sono riportati i principali risultati ottenuti:
+<p align="center">
+  <img src="results/boxplot.png" alt="Distribuzione dell'errore assoluto per [pCS] libero e totale a T0 e T6" width="700">
+  <br>
+  <em>Figura 3: Distribuzione Errore assoluto a T0 e T6 per pCS libero (prima riga) e per pCS totale (seconda riga).</em>
+</p>
+
+<p align="center">
+  <img src="results/RR%.png" alt="Distribuzione dell'errore assoluto per Reduction Ratio% a T0 e T6" width="700">
+  <br>
+  <em>Figura 4: Distribuzione Errore assoluto a T0 e T6 per RR%.</em>
+</p>
 
 #### Verso una Medicina di Precisione
 
@@ -42,6 +67,6 @@ Infine, per tradurre queste capacità computazionali in uno strumento clinico pr
 <p align="center">
   <img src="results/GUI_PBUTs.png" alt="Interfaccia Grafica (GUI)" width="800">
   <br>
-  <em>Figura 3: Interfaccia grafica (GUI) sviluppata in Python per l'utilizzo clinico.</em>
+  <em>Figura 5: Interfaccia grafica (GUI) sviluppata in Python per l'utilizzo clinico.</em>
 </p>
 In futuro, questo framework può rappresentare un potente strumento predittivo a supporto del lavoro del medico, aiutando il paziente a ricevere il miglior trattamento possibile, realmente "cucito sulla sua persona" nell'ottica di una medicina di precisione.
